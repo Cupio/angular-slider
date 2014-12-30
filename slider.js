@@ -92,7 +92,7 @@
         ngModelLow: '=?',
         ngModelHigh: '=?'
       },
-      template: '<div class="slider-bar"><div class="selection"></div></div>\n<div class="handle low"></div><div class="handle high"></div>\n<div class="bubble limit low">{{ values.length ? values[floor || 0] : floor }}</div>\n<div class="bubble limit high">{{ values.length ? values[ceiling || values.length - 1] : ceiling }}</div>\n<div class="bubble value low">{{ values.length ? values[local.ngModelLow || local.ngModel || 0] : local.ngModelLow || local.ngModel || 0 }}</div>\n<div class="bubble value high">{{ values.length ? values[local.ngModelHigh] : local.ngModelHigh }}</div>',
+      template: '<div class="slider-bar"><div class="selection"></div></div>\n<div class="handle low"></div><div class="handle high"></div>\n<div class="bubble limit low"></div>\n<div class="bubble limit high"></div>\n<div class="bubble value low"></div>\n<div class="bubble value high"></div>',
       compile: function(element, attributes) {
         var high, low, range, watchables;
         range = (attributes.ngModel == null) && (attributes.ngModelLow != null) && (attributes.ngModelHigh != null);
@@ -210,7 +210,7 @@
                 var currentRef, onEnd, onMove, onStart;
                 currentRef = ref;
                 onEnd = function() {
-                  bubble.removeClass('active');
+                  // bubble.removeClass('active');
                   handle.removeClass('active');
                   ngDocument.unbind(events.move);
                   ngDocument.unbind(events.end);
@@ -265,7 +265,7 @@
                 };
                 onStart = function(event) {
                   dimensions();
-                  bubble.addClass('active');
+                  // bubble.addClass('active');
                   handle.addClass('active');
                   setPointers();
                   event.stopPropagation();

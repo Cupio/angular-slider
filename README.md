@@ -1,6 +1,11 @@
 angular-slider
 ==============
 
+### Create new tag:
+```
+git tag -a v1.4 -m 'my version 1.4'
+```
+
 Slider directive implementation for AngularJS, without jQuery dependencies. Requires AngularJS v1.1.4 or higher (optional isolate scope bindings support).
 
 ### Example:

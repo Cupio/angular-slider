@@ -1,10 +1,10 @@
-$height: 7px;
+$height: 5px;
 slider, [slider] {
   display: inline-block;
   position: relative;
   height: $height;
-  width: 100%;
-  margin: 25px 5px 25px 5px;
+  width: 90%;
+  margin: 25px 5%;
   vertical-align: middle;
 
   div {
@@ -15,61 +15,86 @@ slider, [slider] {
       width: 100%;
       height: 100%;
       border-radius: $height;
-      background: #444;
+      // background: #D3D3D3;
+      background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $range-default-track-bg), color-stop(100%, $range-default-track-bg));
+      background: linear-gradient(to right, $range-default-track-bg 0%, $range-default-track-bg 100%);
       overflow: hidden;
 
       .selection {
         width: 0%;
         height: 100%;
-        background: #13b6ff;
+        // background: #13b6ff;
+        background: $assertive;
       }
     }
 
     &.handle {
+      width: $range-slider-width;
+      height: $range-slider-height;
+      border-radius: $range-slider-border-radius;
+      background-color: $toggle-handle-off-bg-color;
+      box-shadow: 0 0 2px rgba(0,0,0,.5), 1px 3px 5px rgba(0,0,0,0.25);
       cursor: pointer;
-      width: 20px;
-      height: 20px;
+      -webkit-appearance: none;
+
       top: -8px;
-      background-color: #fff;
-      border: 1px solid #000;
       z-index: 2;
-      border-radius: 100%;
 
-      &:after {
-        content: '';
-        background-color: #777;
-        width: 8px;
-        height: 8px;
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        border-radius: 100%;
+      // cursor: pointer;
+      // width: 24px;
+      // height: 24px;
+      // top: -8px;
+      // background-color: #fff;
+      // border: 1px solid #CCC;
+      // z-index: 2;
+      // border-radius: 100%;
 
-        &:hover {
-          background-color: #000;
-        }
-      }
+      // &:after {
+      //   content: '';
+      //   background-color: #777;
+      //   width: 8px;
+      //   height: 8px;
+      //   position: absolute;
+      //   top: 6px;
+      //   left: 6px;
+      //   border-radius: 100%;
+      //
+      //   &:hover {
+      //     background-color: #000;
+      //   }
+      // }
 
-      &.active:after {
-        background-color: #f00;
-      }
+      // &.active:after {
+      //   background-color: #f00;
+      // }
+    }
+
+    &.handle:after {
+      /* create a larger (but hidden) hit area */
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      padding: 30px;
+      content: ' ';
+      //background: red;
+      //opacity: .5;
     }
 
     &.bubble {
       display: none;
-      cursor: default;
-      top: -22px;
-      padding: 1px 3px 1px 3px;
-      font-size: 0.7em;
-      font-family: sans-serif;
-
-      &.active {
-        display: inline-block;
-      }
-
-      &.limit {
-        color: #777;
-      }
+      // cursor: default;
+      // top: -22px;
+      // padding: 1px 3px 1px 3px;
+      // font-size: 0.7em;
+      // font-family: sans-serif;
+      //
+      // &.active {
+      //   display: inline-block;
+      // }
+      //
+      // &.limit {
+      //   color: #777;
+      // }
     }
   }
 }
